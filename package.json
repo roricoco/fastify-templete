@@ -5,8 +5,10 @@
   "main": "server.ts",
   "scripts": {
     "build": "tsc",
-    "dev": "cross-env NODE_ENV=development tsc-watch --onSuccess \"node dist/server.js\"",
-    "start": "cross-env NODE_ENV=production node dist/server.js"
+    "dev": "export NODE_ENV=development && tsc-watch --onSuccess \"node dist/server.js\"",
+    "start": "export NODE_ENV=production && node dist/server.js",
+    "dev:win": "cross-env NODE_ENV=development tsc-watch --onSuccess \"node dist/server.js\"",
+    "start:win": "cross-env NODE_ENV=production node dist/server.js"
   },
   "keywords": [],
   "author": "",

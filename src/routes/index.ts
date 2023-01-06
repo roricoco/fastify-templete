@@ -4,7 +4,7 @@ const router = async function (fastify: any, opts: any) {
     "/",
     async function (request: FastifyRequest, reply: FastifyReply) {
       console.log(request?.query);
-      return { root: true };
+      return { message: "Hello! Welcome to my Fastify Templete v1.0.0!" };
     }
   );
 };

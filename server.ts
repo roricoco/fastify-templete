@@ -40,7 +40,7 @@ app.addHook("onRequest", async (req, reply) => {
 });
 
 app.register(AutoLoad, {
-  dir: path.join(__dirname, "routes"),
+  dir: path.join(__dirname, "src/routes"),
   options: Object.assign({}),
 });
 
