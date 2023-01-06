@@ -1,10 +1,14 @@
 import { FastifyReply, FastifyRequest, fastify } from "fastify";
 
-const router = async function (fastify: any, opts: any) {
+const router = async function (fastify: any) {
   fastify.get(
     "/",
     async function (request: FastifyRequest, reply: FastifyReply) {
-      return "router test";
+      return {
+        router: request?.routerPath,
+        query: request?.query,
+        message: "You're in test page!",
+      };
     }
   );
 };
