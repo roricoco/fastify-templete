@@ -5,6 +5,7 @@ import jwt from "@fastify/jwt";
 import fastifySchedule from "@fastify/schedule";
 import { AsyncTask, SimpleIntervalJob } from "toad-scheduler";
 import AutoLoad from "@fastify/autoload";
+import qs from "qs";
 
 const PORT = Number(process.env.PORT || 4000);
 
@@ -18,6 +19,7 @@ const app = fastify({
       },
     },
   },
+  querystringParser: (str) => qs.parse(str),
 });
 
 app.register(cors);
